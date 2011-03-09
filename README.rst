@@ -8,4 +8,4 @@ Tests the given webserver for enabled HTTP methods
 
 Usage
 =====
-``HTTpoke.py [-p <port>] [-s|--ssl] <webserver>``
+``httpoke.py [-p <port>] [-s|--ssl] <webserver>``
