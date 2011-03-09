@@ -8,7 +8,7 @@ import sys
 import optparse
 import httplib
 
-class Tester(object):
+class Probe(object):
     def __init__(self, server, port=None, ssl=None):
         self.server = server
         self.port = port or (443 if ssl else 80)
@@ -72,5 +72,5 @@ if __name__ == "__main__":
     if not args:
         parser.error("Must include at least one web server to test")
     for server in args:
-        t = Tester(server, options.port, options.ssl)
-        t.test()
+        p = Probe(server, options.port, options.ssl)
+        p.test()
