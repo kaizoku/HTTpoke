@@ -74,6 +74,11 @@ if __name__ == "__main__":
 
     if not args:
         parser.error("Must include at least one web server to test")
+
     for server in args:
-        p = Probe(server, options.port, options.ssl)
+        if server.find(":") != -1:
+            server, port = server.split(":")
+        else:
+            port = options.port
+        p = Probe(server, port, options.ssl)
         p.test()

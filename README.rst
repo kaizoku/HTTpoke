@@ -10,4 +10,4 @@ Usage
 
 ::
 
-    httpoke.py [-p <port>] [-s|--ssl] <webserver>
+    httpoke.py [-s|--ssl] <webserver>[:port]
