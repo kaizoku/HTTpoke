@@ -29,13 +29,16 @@ class Probe(object):
 
     def test(self):
         results = {}
-        results["TRACE"] = "Success" if self.trace() else "Failed"
-        results["PUT"] = "Success" if self.put() else "Failed"
-        results["DELETE"] = "Success" if self.delete() else "Failed"
-
-        print "Domain: %s" % (self.server,)
-        for test, result in results.iteritems():
-            print "%s:\t%s" % (test, result)
+        try:
+            results["TRACE"] = "Success" if self.trace() else "Failed"
+            results["PUT"] = "Success" if self.put() else "Failed"
+            results["DELETE"] = "Success" if self.delete() else "Failed"
+        except Exception, e:
+            print "Connection failed: %s" % (e,)
+        else:
+            print "Domain: %s" % (self.server,)
+            for test, result in results.iteritems():
+                print "%s:\t%s" % (test, result)
 
     def trace(self):
         r = self.request("TRACE", "/", headers={"Abcd":"efghij"})
