@@ -11,3 +11,11 @@ Usage
 ::
 
     httpoke.py [-s|--ssl] <webserver>[:port]
+
+
+Installation
+=====
+
+::
+
+    pip install git+https://github.com/kaizoku/HTTpoke
