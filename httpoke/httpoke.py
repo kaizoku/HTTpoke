@@ -63,7 +63,7 @@ class Probe(object):
             return False
 
 
-if __name__ == "__main__":
+def main():
     parser = optparse.OptionParser(version="%prog 0.1",
         usage="%prog [-p <port>] [-s|--ssl] <webserver>")
     parser.add_option("-p", "--port", help="server port", action="store",
