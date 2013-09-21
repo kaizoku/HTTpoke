@@ -65,7 +65,7 @@ class Probe(object):
 
 def main():
     parser = optparse.OptionParser(version="%prog 0.1",
-        usage="%prog [-p <port>] [-s|--ssl] <webserver>")
+        usage="%prog [-p port] [-s|--ssl] <webserver>[:port]")
     parser.add_option("-p", "--port", help="server port", action="store",
         type="int", dest="port", default=80)
     parser.add_option("-s", "--ssl", help="enable SSL", action="store_true",
